@@ -12,5 +12,5 @@ export MAPD_USER=$(whoami)
 export MAPD_GROUP=$(whoami)
 export MAPD_STORAGE=$CONDA_PREFIX/var/lib/mapd
 export MAPD_PATH=$CONDA_PREFIX/opt/mapd
-export PATH=$CONDA_PREFIX/opt/mapd/bin:$CONDA_PREFIX/opt/mapd:$CONDA_PREFIX/opt/mapd/systemd:$PATH
 
+export PATH=$CONDA_PREFIX/opt/mapd/bin:$CONDA_PREFIX/opt/mapd:$CONDA_PREFIX/opt/mapd/systemd:$PATH
