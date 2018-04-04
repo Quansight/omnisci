@@ -1,0 +1,44 @@
+{% set name = "mapd-ce-render" %}
+{% set fname = "mapd-ce" %}
+{% set pkg_type = 'Linux-x86_64-render'%}
+{% set version = "3.6.0" %}
+{% set sha256 = "f14a2f8be6eaaf689729c3e64879ca7a660ada376eb65bfbe4e7ce9d8c1e7cd5" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ fname }}-latest-{{ pkg_type }}.tar.gz
+  url: https://builds.mapd.com/ce/{{ fname }}-latest-{{ pkg_type }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 1
+  skip: True  # [not linux]
+
+requirements:
+  run:
+    - zlib
+
+test:
+  commands:
+    - mapdql -v
+
+about:
+  home: https://www.mapd.com/
+  license: other
+  license_family: other
+  license_file: EULA-CE.txt
+  summary: 'The MapD database GPU Community Edition'
+
+  description: |
+    Students, academics, and developers choose the single-node MapD Community edition 
+    for non-commercial evaluation of MapD's SQL engine and visual analytics.
+  doc_url: https://www.mapd.com/docs/
+  dev_url: https://github.com/mapd/mapd-core
+
+extra:
+  recipe-maintainers:
+    - xmnlab
+    - teoliphant
