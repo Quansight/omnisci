@@ -60,11 +60,8 @@ requirements:
     - arrow
 
 test:
-  # Some package might need a `test/commands` key to check CLI.
-  # List all the packages/modules that `run_test.py` imports.
   commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
+    - mapdql --version
  
 about:
   home: https://www.mapd.com/
