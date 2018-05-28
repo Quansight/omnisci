@@ -50,8 +50,36 @@ RUN sudo bash deploy-tail.sh
 
 RUN chown -R default.default $HOME
 
-USER 1001
+RUN wget -O Miniconda.sh http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-RUN echo 'scl enable devtoolset-4 bash' >> $HOME/.bash_history
+RUN /bin/bash Miniconda.sh -b -p /opt/miniconda
+RUN rm Miniconda.sh && \
+  /opt/miniconda/bin/conda config --set show_channel_urls True && \
+  /opt/miniconda/bin/conda update --yes --all  && \
+  /opt/miniconda/bin/conda install --yes git conda-build=3.* curl anaconda-client && \
+  /opt/miniconda/bin/conda clean --tarballs --packages
 
-WORKDIR ${HOME}/code
+RUN yum install -y which
+
+# RUN cp -R /root/* ${HOME}/ && \
+#    chown -R ${USER}.${USER} ${HOME}
+
+# USER 1001
+
+ENV CONDA_PATH=/opt/miniconda/bin \
+    CONDA_ROOT=/opt/miniconda \
+    MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles \
+    MODULESHOME=/usr/share/Modules
+
+RUN ${CONDA_PATH}/conda config --add channels conda-forge
+RUN mkdir -p ${CONDA_ROOT}/conda-bld/src_cache
+COPY v3.6.0_402140dc51.tar.gz ${CONDA_ROOT}/conda-bld/src_cache/v3.6.0_402140dc51.tar.gz
+
+COPY conda-recipes ${HOME}/conda-recipes
+
+RUN eval $(/usr/bin/modulecmd bash load mapd-deps) && \
+    cd ${HOME}/conda-recipes && \
+    echo "${CONDA_PATH}/conda-build mapd-core-cpu"
+
+WORKDIR ${HOME}/conda-recipes
+

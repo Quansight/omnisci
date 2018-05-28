@@ -1,0 +1,45 @@
+{% set name = "mapd-core-cpu" %}
+{% set version = "3.6.0" %}
+{% set sha256 = "402140dc5189f6b7bd82bd8c551040981131f6eb79745031521b4fe77310aaab" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  # fn: {{ name }}-latest-{{ pkg_type }}.tar.gz
+  url: https://github.com/mapd/mapd-core/archive/v{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  skip: True  # [not linux]
+
+requirements:
+  build:
+  run:
+    - llvmdev
+    - go
+    - boost
+    - openjdk
+    - gperftools
+    - gdal
+    - arrow-cpp 0.7.1
+
+about:
+  home: https://www.mapd.com/
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE.md
+  summary: 'The MapD Core database'
+
+  description: |
+    MapD Core is an in-memory, column store, SQL relational database 
+    that was designed from the ground up to run on GPUs.
+  doc_url: https://www.mapd.com/docs/
+  dev_url: https://github.com/mapd/mapd-core
+
+extra:
+  recipe-maintainers:
+    - xmnlab
+    - pearu
