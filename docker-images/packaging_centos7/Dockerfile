@@ -61,11 +61,6 @@ RUN rm Miniconda.sh && \
 
 RUN yum install -y which
 
-# RUN cp -R /root/* ${HOME}/ && \
-#    chown -R ${USER}.${USER} ${HOME}
-
-# USER 1001
-
 ENV CONDA_PATH=/opt/miniconda/bin \
     CONDA_ROOT=/opt/miniconda \
     MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles \
@@ -77,9 +72,13 @@ COPY v3.6.0_402140dc51.tar.gz ${CONDA_ROOT}/conda-bld/src_cache/v3.6.0_402140dc5
 
 COPY conda-recipes ${HOME}/conda-recipes
 
-RUN eval $(/usr/bin/modulecmd bash load mapd-deps) && \
-    cd ${HOME}/conda-recipes && \
-    echo "${CONDA_PATH}/conda-build mapd-core-cpu"
+RUN cd ${HOME}/conda-recipes && \
+    chmod +x mapd-core-cpu/*.sh && \
+    ${CONDA_PATH}/conda-build mapd-core-cpu
+
+RUN $CONDA_PATH/conda install -y --use-local mapd-core-cpu
+
+ENV PATH=${CONDA_ROOT}/opt/mapd/bin:$PATH
 
 WORKDIR ${HOME}/conda-recipes
 

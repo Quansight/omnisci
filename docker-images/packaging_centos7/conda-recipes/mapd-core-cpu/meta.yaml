@@ -15,17 +15,6 @@ build:
   number: 0
   skip: True  # [not linux]
 
-requirements:
-  build:
-  run:
-    - llvmdev
-    - go
-    - boost
-    - openjdk
-    - gperftools
-    - gdal
-    - arrow-cpp 0.7.1
-
 about:
   home: https://www.mapd.com/
   license: Apache-2.0
