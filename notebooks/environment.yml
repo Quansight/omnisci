@@ -1,0 +1,8 @@
+name: mapd
+channels:
+  - conda-forge
+dependencies:
+  - python=3.6
+  - jupyterlab=0.32.
+  - pip:
+    - git+https://github.com/Quansight/ibis.git
