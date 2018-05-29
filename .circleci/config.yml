@@ -6,7 +6,7 @@ jobs:
     working_directory: ~/repo/notebooks
     steps:
       - checkout:
-          path: ~/repo
+        - path: ~/repo
       -run: |
           python3 -m venv venv
           . venv/bin/activate
@@ -21,7 +21,7 @@ jobs:
     working_directory: ~/repo/notebooks
     steps:
       - checkout:
-          path: ~/repo
+        - path: ~/repo
       - run: conda env create -f environment.yml
       - run: conda activate mapd
       - run: ./test.bash
