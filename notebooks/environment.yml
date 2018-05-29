@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.6
-  - jupyterlab=0.32.
+  - jupyterlab=0.32.*
+  - ibis-framework
   - pip:
     - git+https://github.com/Quansight/ibis.git
