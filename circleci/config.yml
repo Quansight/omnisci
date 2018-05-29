@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  pip:
+    docker:
+      - image: circleci/python:3.6.1
+    working_directory: ~/repo/notebooks
+    steps:
+      - checkout
+        path: ~/repo
+      - run: pip install -r requirements.txt
+      - run: ./test.bash
+  conda:
+    docker:
+      - image: continuumio/miniconda
+    working_directory: ~/repo/notebooks
+    steps:
+      - checkout
+        path: ~/repo
+      - run: conda env create -f environment.yml
+      - run: conda activate mapd
+      - run: ./test.bash
+workflows:
+  version: 2
+  test:
+    jobs:
+      - pip
+      - conda
