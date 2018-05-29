@@ -48,5 +48,5 @@
 
 
 
-![svg](Mapd%20progress%20report%20April%2026_files/Mapd%20progress%20report%20April%2026_7_0.svg)
+![svg](Mapd%20progress%20report%20April%2026_7_0.svg)
 
