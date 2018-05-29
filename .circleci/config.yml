@@ -5,8 +5,8 @@ jobs:
       - image: circleci/python:3.6.1
     working_directory: ~/repo/notebooks
     steps:
-      - checkout
-        path: ~/repo
+      - checkout:
+          path: ~/repo
       - run: pip install -r requirements.txt
       - run: ./test.bash
   conda:
@@ -14,8 +14,8 @@ jobs:
       - image: continuumio/miniconda
     working_directory: ~/repo/notebooks
     steps:
-      - checkout
-        path: ~/repo
+      - checkout:
+          path: ~/repo
       - run: conda env create -f environment.yml
       - run: conda activate mapd
       - run: ./test.bash
