@@ -1,2 +1,0 @@
-git+https://github.com/Quansight/ibis.git
-jupyterlab==0.32.1

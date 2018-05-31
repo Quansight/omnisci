@@ -7,14 +7,16 @@ jobs:
     steps:
       - checkout:
         - path: ~/repo
+      -run: python3 -m venv venv
       -run: |
-          python3 -m venv venv
           . venv/bin/activate
-          pip install -r requirements.txt
+          pip install --process-dependency-link git+https://github.com/Quansight/jupyter-mapd-renderer.git@setup.py
       - run: |
           . venv/bin/activate
-          pip install -r requirements.txt
-      - run: ./test.bash
+          jupyter labextension install jupyterlab-mapd
+      - run: |
+          . venv/bin/activate
+          ./test.bash
   conda:
     docker:
       - image: continuumio/miniconda
@@ -23,8 +25,12 @@ jobs:
       - checkout:
         - path: ~/repo
       - run: conda env create -f environment.yml
-      - run: conda activate mapd
-      - run: ./test.bash
+      - run: |
+          conda activate mapd
+          jupyter labextension install jupyterlab-mapd
+      - run: |
+          conda activate mapd
+          ./test.bash
 workflows:
   version: 2
   test:

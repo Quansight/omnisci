@@ -4,7 +4,7 @@ services:
     build: .
     environment:
       JUPYTER_ENABLE_LAB: 'true'
-    command: start-notebook.sh --watch
+    command: start-notebook.sh
     ports:
       - "8888:8888"
     volumes:

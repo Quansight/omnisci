@@ -6,4 +6,4 @@ dependencies:
   - jupyterlab=0.32.*
   - ibis-framework
   - pip:
-    - git+https://github.com/Quansight/ibis.git
+    - git+https://github.com/Quansight/jupyter-mapd-renderer.git@setup.py

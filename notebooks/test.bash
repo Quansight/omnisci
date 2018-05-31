@@ -1,7 +1,5 @@
 #!/bin/bash
 set -euxo
-
-jupyter nbconvert --execute "Ibis + Altair.ipynb"
-jupyter nbconvert --execute "Vega Rendering.ipynb"
-
+jupyter nbconvert --execute --inplace "Ibis + Altair.ipynb" "Vega Rendering.ipynb"
+git diff --exit-code
 set +euxo

@@ -1,1 +1,9 @@
 .ipynb_checkpoints/
+.cache
+.local
+.jupyter
+.ipython
+notebooks/*.html
+altair-data*.json
+.bash_history
+.python_history
