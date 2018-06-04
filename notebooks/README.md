@@ -1,12 +1,19 @@
 # Example Notebooks
 
-[![CircleCI](https://circleci.com/gh/Quansight/mapd.svg?style=svg)](https://circleci.com/gh/Quansight/mapd)
 
 There are some example notebooks in this directory that should be run with Jupyterlab, with the mapd plugin installed.
 
 
 * `Ibis + Altair.ipynb`: Creating a MapD query with Ibis and then visualizaing with Altair, with both the mapd vega backend and the browser backend.
 * `Vega Rendering.ipynb`: Rendering vega and vega lite directly in the notebook to the mapd vega backend.
+
+## CI
+[![CircleCI](https://circleci.com/gh/Quansight/mapd.svg?style=svg)](https://circleci.com/gh/Quansight/mapd)
+
+Running these notebooks is tested in CircleCI. It is tested with Conda, Pip, and in Docker.
+
+It tests running the notebooks with `jupyter nbconvert --execute ...`. To change which notebooks
+are tested, modify the `./test.bash` file.
 
 ## Running Notebooks
 

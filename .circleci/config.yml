@@ -36,8 +36,8 @@ jobs:
       - checkout:
           path: ~/repo
       - setup_remote_docker
-      - run: docker-compose build jupyter
-      - run: docker-compose run jupyter ./test.bash
+      - run: docker-compose build jupyter-minimal
+      - run: docker-compose run jupyter-minimal ./test.bash
 workflows:
   version: 2
   test:

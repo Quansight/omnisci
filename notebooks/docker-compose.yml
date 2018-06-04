@@ -9,6 +9,8 @@ services:
       - "8888:8888"
     volumes:
       - ".:/home/jovyan"
+  jupyter-minimal:
+    build: .
   jupyter-dev:
     build:
       context: .
