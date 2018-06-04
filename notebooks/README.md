@@ -26,7 +26,9 @@ jupyter lab
 ### Pip
 
 ```bash
-pip install --process-dependency-link git+https://github.com/Quansight/jupyter-mapd-renderer.git@setup.py
+python -m venv venv
+. venv/bin/activate
+pip install -r requirements.txt
 jupyter labextension install jupyterlab-mapd@0.3.0
 jupyter lab
 ```

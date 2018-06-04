@@ -10,7 +10,7 @@ jobs:
       -run: python3 -m venv venv
       -run: |
           . venv/bin/activate
-          pip install --process-dependency-link git+https://github.com/Quansight/jupyter-mapd-renderer.git@setup.py
+          pip install -r requirements.txt
       - run: |
           . venv/bin/activate
           jupyter labextension install jupyterlab-mapd@0.3.0
@@ -25,9 +25,6 @@ jobs:
       - checkout:
         - path: ~/repo
       - run: conda env create -f environment.yml
-      - run: |
-        conda activate mapd
-        conda remove -y ibis-framework
       - run: |
           conda activate mapd
           jupyter labextension install jupyterlab-mapd@0.3.0
