@@ -45,3 +45,15 @@ workflows:
       - pip
       - conda
       - docker
+  nightly:
+    jobs:
+      - pip
+      - conda
+      - docker
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
