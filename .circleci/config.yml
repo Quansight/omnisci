@@ -26,6 +26,9 @@ jobs:
         - path: ~/repo
       - run: conda env create -f environment.yml
       - run: |
+        conda activate mapd
+        conda remove -y ibis-framework
+      - run: |
           conda activate mapd
           jupyter labextension install jupyterlab-mapd@0.3.0
       - run: |
