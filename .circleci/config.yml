@@ -25,13 +25,9 @@ jobs:
       - checkout:
           path: ~/repo
       - run: conda env create -f environment.yml
-      - run: |
-          conda activate mapd
-          jupyter labextension install jupyterlab-mapd@0.3.0
-      - run: |
-          conda activate mapd
-          ./test.bash
-workflows:
+      - run: echo 'export PATH=/opt/conda/envs/mapd/bin:$PATH' >> $BASH_ENV
+      - run: jupyter labextension install jupyterlab-mapd@0.3.0
+      - run: ./test.bash
   version: 2
   test:
     jobs:
