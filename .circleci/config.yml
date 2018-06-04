@@ -28,9 +28,20 @@ jobs:
       - run: echo 'export PATH=/opt/conda/envs/mapd/bin:$PATH' >> $BASH_ENV
       - run: jupyter labextension install jupyterlab-mapd
       - run: ./test.bash
+  docker:
+    docker:
+      - image: circleci/buildpack-deps
+    working_directory: ~/repo/notebooks
+    steps:
+      - checkout:
+          path: ~/repo
+      - setup_remote_docker
+      - run: docker-compose build jupyter
+      - run: docker-compose run jupyter ./test.bash
 workflows:
   version: 2
   test:
     jobs:
       - pip
       - conda
+      - docker
