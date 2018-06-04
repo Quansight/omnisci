@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook:1085ca054a5f
+FROM jupyter/scipy-notebook
 
 COPY requirements.txt .
 
