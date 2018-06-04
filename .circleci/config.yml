@@ -28,6 +28,7 @@ jobs:
       - run: echo 'export PATH=/opt/conda/envs/mapd/bin:$PATH' >> $BASH_ENV
       - run: jupyter labextension install jupyterlab-mapd@0.3.0
       - run: ./test.bash
+workflows:
   version: 2
   test:
     jobs:
