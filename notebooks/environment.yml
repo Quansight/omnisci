@@ -7,6 +7,8 @@ dependencies:
   - pymapd
   - altair
   - nodejs
+  - pyyaml
+  - regex
   - pip:
     - git+https://github.com/Quansight/jupyter-mapd-renderer.git@4a8183bf8cad901910ebc4925f5a42162cbbf45b#egg=jupyter-mapd-renderer[altair]
     - git+https://github.com/Quansight/ibis.git@55a46fe85dcfe40c601aa4988fa2900fb4dd5804#egg=ibis-framework

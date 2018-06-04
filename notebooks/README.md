@@ -1,5 +1,7 @@
 # Example Notebooks
 
+[![CircleCI](https://circleci.com/gh/Quansight/mapd.svg?style=svg)](https://circleci.com/gh/Quansight/mapd)
+
 There are some example notebooks in this directory that should be run with Jupyterlab, with the mapd plugin installed.
 
 
