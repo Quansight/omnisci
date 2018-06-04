@@ -45,3 +45,6 @@ workflows:
       - pip
       - conda
       - docker
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
