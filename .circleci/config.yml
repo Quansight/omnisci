@@ -2,7 +2,7 @@ version: 2
 jobs:
   pip:
     docker:
-      - image: circleci/python:3.6.1
+      - image: circleci/python:3.6-stretch-node
     working_directory: ~/repo/notebooks
     steps:
       - checkout:

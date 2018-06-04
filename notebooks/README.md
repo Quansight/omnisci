@@ -27,6 +27,8 @@ jupyter lab
 
 ### Pip
 
+This requires nodejs < 10 installed.
+
 ```bash
 python -m venv venv
 . venv/bin/activate
