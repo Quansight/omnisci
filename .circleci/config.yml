@@ -13,7 +13,7 @@ jobs:
           pip install --process-dependency-link git+https://github.com/Quansight/jupyter-mapd-renderer.git@setup.py
       - run: |
           . venv/bin/activate
-          jupyter labextension install jupyterlab-mapd
+          jupyter labextension install jupyterlab-mapd@0.3.0
       - run: |
           . venv/bin/activate
           ./test.bash
@@ -27,7 +27,7 @@ jobs:
       - run: conda env create -f environment.yml
       - run: |
           conda activate mapd
-          jupyter labextension install jupyterlab-mapd
+          jupyter labextension install jupyterlab-mapd@0.3.0
       - run: |
           conda activate mapd
           ./test.bash
