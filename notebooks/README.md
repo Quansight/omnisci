@@ -21,7 +21,7 @@ docker-compose up jupyterlab
 ```bash
 conda env create -f environment.yml
 conda activate mapd
-jupyter labextension install jupyterlab-mapd@0.3.0
+jupyter labextension install jupyterlab-mapd
 jupyter lab
 ```
 
@@ -33,7 +33,7 @@ This requires nodejs < 10 installed.
 python -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
-jupyter labextension install jupyterlab-mapd@0.3.0
+jupyter labextension install jupyterlab-mapd
 jupyter lab
 ```
 
@@ -41,6 +41,8 @@ jupyter lab
 ## ...With Local Version of `Quansight/jupyter-mapd-renderer`
 
 ### Docker
+
+*Note: this is not working yet. We need to fix some permission problems*
 
 ```bash
 git clone git@github.com:Quansight/jupyter-mapd-renderer.git

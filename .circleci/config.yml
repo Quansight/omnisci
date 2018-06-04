@@ -13,7 +13,7 @@ jobs:
           pip install -r requirements.txt
       - run: |
           . venv/bin/activate
-          jupyter labextension install jupyterlab-mapd@0.3.0
+          jupyter labextension install jupyterlab-mapd
       - run: |
           . venv/bin/activate
           ./test.bash
@@ -26,7 +26,7 @@ jobs:
           path: ~/repo
       - run: conda env create -f environment.yml
       - run: echo 'export PATH=/opt/conda/envs/mapd/bin:$PATH' >> $BASH_ENV
-      - run: jupyter labextension install jupyterlab-mapd@0.3.0
+      - run: jupyter labextension install jupyterlab-mapd
       - run: ./test.bash
 workflows:
   version: 2
