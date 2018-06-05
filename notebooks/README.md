@@ -52,6 +52,7 @@ jupyter lab
 Start with the exsting conda environment from above. Then run:
 
 ```bash
+conda activate mapd
 jupyter labextension uninstall jupyterlab-mapd --no-build
 git clone git@github.com:Quansight/jupyter-mapd-renderer.git
 cd jupyter-mapd-renderer
@@ -59,8 +60,10 @@ jlpm install
 jlpm run build
 jupyter labextension link . --no-build
 jlpm watch
+
 # in new window
-cd ..
+conda activate mapd
+cd .. # so you are in `./notebooks`
 jupyter lab --watch
 ```
 
