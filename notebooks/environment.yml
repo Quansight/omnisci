@@ -1,0 +1,14 @@
+name: mapd
+channels:
+  - conda-forge
+dependencies:
+  - python=3.6
+  - jupyterlab=0.32.*
+  - pymapd
+  - altair
+  - nodejs
+  - pyyaml
+  - regex
+  - pip:
+    - git+https://github.com/Quansight/jupyter-mapd-renderer.git#egg=jupyter-mapd-renderer[altair]
+    - git+https://github.com/Quansight/ibis.git#egg=ibis-framework

@@ -1,0 +1,24 @@
+version: "3"
+services:
+  jupyter:
+    build: .
+    environment:
+      JUPYTER_ENABLE_LAB: 'true'
+    command: start-notebook.sh
+    ports:
+      - "8888:8888"
+    volumes:
+      - ".:/home/jovyan"
+  jupyter-minimal:
+    build: .
+  jupyter-dev:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    environment:
+      JUPYTER_ENABLE_LAB: 'true'
+    command: start-notebook.sh --watch
+    ports:
+      - "8888:8888"
+    volumes:
+      - ".:/home/jovyan"

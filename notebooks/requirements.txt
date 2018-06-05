@@ -1,0 +1,3 @@
+git+https://github.com/Quansight/jupyter-mapd-renderer.git#egg=jupyter-mapd-renderer[altair]
+git+https://github.com/Quansight/ibis.git#egg=ibis-framework[mapd]
+jupyterlab
