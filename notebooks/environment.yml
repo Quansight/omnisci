@@ -4,11 +4,28 @@ channels:
 dependencies:
   - python=3.6
   - jupyterlab=0.32.*
-  - pymapd
   - altair
   - nodejs
+  # all of these are for jupyter-mapd-renderer:
   - pyyaml
   - regex
+  # all of these are for pymapd:
+  - python
+  - setuptools
+  - setuptools_scm
+  - cython
+  - numpy 1.11.*
+  - arrow-cpp 0.7.*
+  - pyarrow >=0.5.0
+  - setuptools
+  - numpy >=1.11.*
+  - arrow-cpp >=0.5.0
+  - pyarrow >=0.5.0
+  - pandas
+  - six
+  - sqlalchemy
+  - thrift 0.10.0
   - pip:
     - git+https://github.com/Quansight/jupyter-mapd-renderer.git#egg=jupyter-mapd-renderer[altair]
     - git+https://github.com/Quansight/ibis.git#egg=ibis-framework
+    - git+https://github.com/mapd/pymapd.git
