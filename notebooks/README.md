@@ -47,6 +47,24 @@ jupyter lab
 
 ## ...With Local Version of `Quansight/jupyter-mapd-renderer`
 
+### Conda
+
+Start with the exsting conda environment from above. Then run:
+
+```bash
+jupyter labextension uninstall jupyterlab-mapd --no-build
+git clone git@github.com:Quansight/jupyter-mapd-renderer.git
+cd jupyter-mapd-renderer
+jlpm install
+jlpm run build
+jupyter labextension link . --no-build
+jlpm watch
+# in new window
+cd ..
+jupyter lab --watch
+```
+
+
 ### Docker
 
 *Note: this is not working yet. We need to fix some permission problems*
