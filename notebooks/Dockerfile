@@ -4,6 +4,6 @@ COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
-RUN jupyter labextension install jupyterlab-mapd@0.3.0
+RUN jupyter labextension install jupyterlab-mapd
 
 COPY . .
