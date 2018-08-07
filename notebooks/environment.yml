@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.6
-  - jupyterlab=0.32.*
+  - jupyterlab=0.33.*
   - pymapd
   - altair
   - nodejs
