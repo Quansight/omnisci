@@ -1,3 +1,4 @@
 git+https://github.com/Quansight/jupyter-mapd-renderer.git#egg=jupyter-mapd-renderer[altair]
 git+https://github.com/Quansight/ibis.git@add_rowid_op#egg=ibis-framework[mapd]
 jupyterlab
+ipywidgets

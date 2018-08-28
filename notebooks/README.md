@@ -29,6 +29,7 @@ docker-compose up jupyterlab
 conda env create -f environment.yml
 conda activate mapd
 jupyter labextension install jupyterlab-mapd
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
 jupyter lab
 ```
 
@@ -41,6 +42,7 @@ python -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
 jupyter labextension install jupyterlab-mapd
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
 jupyter lab
 ```
 
@@ -59,6 +61,7 @@ cd jupyter-mapd-renderer
 jlpm install
 jlpm run build
 jupyter labextension link . --no-build
+pip install -e .
 jlpm watch
 
 # in new window
